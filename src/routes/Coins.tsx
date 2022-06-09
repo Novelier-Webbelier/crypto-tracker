@@ -88,10 +88,11 @@ function Coins() {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch("https://api.coinpaprika.com/v1/coins");
-      const json = await response.json();
+      const response = await (
+        await fetch("https://api.coinpaprika.com/v1/coins")
+      ).json();
 
-      setCoins(json.slice(0, 100));
+      setCoins(response.slice(0, 100));
       setLoading(false);
     })();
   }, []);
@@ -111,7 +112,7 @@ function Coins() {
               <Link
                 to={`/${coin.id}`}
                 state={{
-                  name: coin.name,
+                  name: coin.id,
                 }}
               >
                 <CoinImage
