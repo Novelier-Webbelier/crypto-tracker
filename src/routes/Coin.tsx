@@ -76,7 +76,7 @@ const Tab = styled.span<TabProps>`
   text_transform: uppercase;
   font-size: 12px;
   font-weight: 400;
-  padding: 7px 0px;
+  padding: 10px 0px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.5);
   color: ${(props) =>
