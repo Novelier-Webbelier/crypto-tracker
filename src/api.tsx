@@ -15,3 +15,13 @@ export async function fetchCoinTickers(coinId: string) {
     return response.json();
   });
 }
+
+export async function fetchCoinHistory(coinId: string) {
+  const endDate = Math.floor(Date.now() / 1000);
+
+  return fetch(
+    `https://ohlcv-api.nomadcoders.workers.dev/?coinId=${coinId}`
+  ).then((response) => {
+    return response.json();
+  });
+}
