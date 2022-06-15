@@ -1,7 +1,9 @@
 {
   "name": "crypto-tracker",
+  "description": "Crypto Tracker using React JS",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://novelier-webbelier.github.io/crypto-tracker/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
