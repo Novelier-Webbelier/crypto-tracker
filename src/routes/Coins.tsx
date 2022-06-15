@@ -90,9 +90,7 @@ function Coins() {
   return (
     <Container>
       <Helmet>
-        <title>
-          List of Coins!
-        </title>
+        <title>List of Coins!</title>
       </Helmet>
       <Header>
         <Title>List of Coins</Title>
