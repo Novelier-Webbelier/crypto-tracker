@@ -37,6 +37,18 @@ const CoinsList = styled.ul`
   margin-top: 30px;
 `;
 
+const CoinDetails = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const CoinDetailItem = styled.span`
+  font-size: 10px;
+  color: ${props => props.theme.darkColor};
+`;
+
 const Coin = styled.li`
   background-color: ${(props) => props.theme.textColor};
   color: ${(props) => props.theme.bgColor};
@@ -49,7 +61,7 @@ const Coin = styled.li`
     transition: all 0.1s ease-in-out;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 20px;
   }
 
@@ -63,10 +75,22 @@ const Coin = styled.li`
   }
 `;
 
+const CoinInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const CoinImage = styled.img`
   width: 30px;
   height: 30px;
   margin-right: 10px;
+`;
+
+const CoinId = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.h1`
@@ -108,10 +132,24 @@ function Coins() {
                   name: coin.id,
                 }}
               >
-                <CoinImage
-                  src={`https://coinicons-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
-                />
-                {coin.name} &rarr;
+                <CoinInfo>
+                  <CoinImage
+                    src={`https://coinicons-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
+                  />
+                  <CoinId>
+                    {coin.name} &rarr;
+                  </CoinId>
+                </CoinInfo>
+                <CoinDetails>
+                  <CoinDetailItem>
+                    <span>Id : </span>
+                    <span>{coin.id}</span>
+                  </CoinDetailItem>
+                  <CoinDetailItem>
+                    <span>Symbol : </span>
+                    <span>{coin.id}</span>
+                  </CoinDetailItem>
+                </CoinDetails>
               </Link>
             </Coin>
           ))}
