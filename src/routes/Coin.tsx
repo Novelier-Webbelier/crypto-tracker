@@ -76,7 +76,7 @@ const Tabs = styled.div`
 const Tab = styled.span<TabProps>`
   text-align: center;
   text_transform: uppercase;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 400;
   padding: 10px 0px;
   border-radius: 10px;
@@ -87,6 +87,23 @@ const Tab = styled.span<TabProps>`
 
   a {
     display: block;
+  }
+`;
+
+const HomeButton = styled.div`
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    width: 100%;
   }
 `;
 
@@ -232,8 +249,14 @@ function Coin() {
 
           <Routes>
             <Route path="chart" element={<Chart coinId={coinId} />} />
-            <Route path="price" element={<Price />} />
+            <Route path="price" element={<Price coinId={coinId} />} />
           </Routes>
+
+          <HomeButton>
+            <Link to="/">
+              <span>Go to Home</span>
+            </Link>
+          </HomeButton>
         </>
       )}
     </Container>
