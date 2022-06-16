@@ -44,9 +44,10 @@ const Title = styled.h1`
 const Overview = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.accentColor};
   padding: 10px 20px;
   border-radius: 10px;
+  color: ${(props) => props.theme.bgColor};
 `;
 
 const OverviewItem = styled.div`
@@ -80,10 +81,12 @@ const Tab = styled.span<TabProps>`
   font-weight: 400;
   padding: 10px 0px;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) =>
+    props.isActive ? props.theme.textColor : props.theme.accentColor};
   color: ${(props) =>
     props.isActive ? props.theme.accentColor : props.theme.textColor};
   transition: color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
 
   a {
     display: block;
@@ -91,7 +94,7 @@ const Tab = styled.span<TabProps>`
 `;
 
 const HomeButton = styled.div`
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${(props) => props.theme.accentColor};
   border-radius: 5px;
   display: flex;
   align-items: center;

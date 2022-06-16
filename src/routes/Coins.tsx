@@ -46,7 +46,7 @@ const CoinDetails = styled.div`
 
 const CoinDetailItem = styled.span`
   font-size: 10px;
-  color: ${props => props.theme.darkColor};
+  color: ${(props) => props.theme.darkColor};
 `;
 
 const Coin = styled.li`
@@ -136,9 +136,7 @@ function Coins() {
                   <CoinImage
                     src={`https://coinicons-api.vercel.app/api/icon/${coin.symbol.toLowerCase()}`}
                   />
-                  <CoinId>
-                    {coin.name} &rarr;
-                  </CoinId>
+                  <CoinId>{coin.name} &rarr;</CoinId>
                 </CoinInfo>
                 <CoinDetails>
                   <CoinDetailItem>
